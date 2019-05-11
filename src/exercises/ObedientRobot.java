@@ -8,7 +8,7 @@ public class ObedientRobot {
 
 	Robot robot = new Robot("mini");
 
-	private void drawCicle(int radius) {
+	private void drawCircle(int radius) {
 		for (int i = 0; i < 360; i++) {
 			robot.move((int) ((2 * radius * Math.PI) / 360));
 			robot.turn(1);
@@ -47,7 +47,7 @@ public class ObedientRobot {
 		if (shape == 0) {
 			String radiusAsString = JOptionPane.showInputDialog("Please enter the radius of the circle (minimum: 58):");
 			int radius = Integer.parseInt(radiusAsString);
-			or.drawCicle(radius);
+			or.drawCircle(radius);
 		} else if (shape == 1) {
 			String squareSideAsString = JOptionPane.showInputDialog("Please enter the side of the square:");
 			int squareSide = Integer.parseInt(squareSideAsString);
