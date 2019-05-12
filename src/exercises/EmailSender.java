@@ -2,6 +2,8 @@ package exercises;
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class EmailSender {
 
 	void go() {
@@ -10,7 +12,16 @@ public class EmailSender {
 		 * not send correctly.
 		 */
 
-		
+		String email = JOptionPane.showInputDialog("Please enter an email adress:");
+		setEmailAddress(email);
+
+		String message = JOptionPane.showInputDialog("Please enter a message:");
+
+		if (send(message) && email.contains("@") && email.contains(".")) {
+			JOptionPane.showMessageDialog(null, "Email sent.");
+		} else {
+			JOptionPane.showMessageDialog(null, "Email was not sent correctly.");
+		}
 	}
 
 	/* Returns true if email was sent successfully, false if it failed to send. */
